@@ -1,0 +1,60 @@
+/*
+    C25953-20 EMMU GAL 16v8 implementation that is fully functional,
+    but not 1:1 pin compatible (aditional wiring required). 
+    Copyright (C) 2020  Bartosz Mikulski
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+Name     mmu_16v8 ;
+PartNo   GAL16v8 ;
+Date     5/8/2019 ;
+Revision 03 ;
+Designer Bartosz Mikulski ;
+Company  Mikulski Lab ;
+Assembly None ;
+Location  ;
+Device   g16v8a;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = CLK                        ; /*                                 */ 
+PIN 2 = A14                        ; /*                                 */ 
+PIN 3 = A15                        ; /*                                 */ 
+PIN 4 = PB2_BA14                   ; /*                                 */ 
+PIN 5 = PB3_BA15                   ; /*                                 */ 
+PIN 6 = PB4_CBE                    ; /*                                 */ 
+PIN 7 = CAS                        ; /*                                 */ 
+PIN 8 = HALT	                     ; /*                                 */ 
+PIN 11 = !OE                       ; /*                                 */ 
+PIN 17 = PB5_VBE                   ; /*                                 */ 
+PIN 18 = PHI2                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 12 = LHALT;
+PIN 13 = CASBANK                  ; /*                                 */ 
+PIN 14 = CASMAIN                  ; /*                                 */ 
+PIN 15 = FA14                     ; /*                                 */ 
+PIN 16 = FA15                     ; /*                                 */
+PIN 19 = O2;
+
+LHALT.D = HALT;
+O2 = !PHI2;
+
+$define mux_sel ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))
+
+FA14 = !((A14 & !mux_sel) # (PB2_BA14 & mux_sel));
+FA15 = !((A15 & !mux_sel) # (PB3_BA15 & mux_sel));
+
+CASBANK = !((!CAS & PHI2) & mux_sel); 
+CASMAIN = !((!CAS & PHI2) & !mux_sel);

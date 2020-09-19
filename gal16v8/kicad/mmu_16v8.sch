@@ -1,0 +1,271 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "EMMU GAL16v8"
+Date "2020-06-11"
+Rev "1.0"
+Comp "Mikulski-Lab"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Logic_Programmable:GAL16V8 U1
+U 1 1 5EECB8DE
+P 4300 4000
+F 0 "U1" H 4000 4650 50  0000 C CNN
+F 1 "GAL16V8" H 4500 3350 50  0000 C CNN
+F 2 "Package_DIP:DIP-20_W7.62mm" H 4300 4789 50  0001 C CNN
+F 3 "" H 4300 4000 50  0001 C CNN
+	1    4300 4000
+	1    0    0    -1  
+$EndComp
+Text Label 3600 3500 0    50   ~ 0
+~PHI2
+Wire Wire Line
+	3600 3500 3800 3500
+Wire Wire Line
+	3600 3600 3800 3600
+Wire Wire Line
+	3600 3700 3800 3700
+Wire Wire Line
+	3600 3800 3800 3800
+Wire Wire Line
+	3600 3900 3800 3900
+Wire Wire Line
+	3600 4000 3800 4000
+Wire Wire Line
+	3600 4100 3800 4100
+Wire Wire Line
+	3600 4200 3800 4200
+Wire Wire Line
+	3600 4300 3800 4300
+Wire Wire Line
+	3600 4400 3800 4400
+Wire Wire Line
+	4800 3500 5050 3500
+Wire Wire Line
+	4800 3600 5050 3600
+Wire Wire Line
+	4800 3700 5050 3700
+Wire Wire Line
+	4800 3800 5050 3800
+Wire Wire Line
+	4800 3900 5050 3900
+Wire Wire Line
+	4800 4000 5050 4000
+Wire Wire Line
+	4800 4100 5050 4100
+Wire Wire Line
+	4800 4200 5050 4200
+Text Label 3600 3600 0    50   ~ 0
+A14
+Text Label 3600 3700 0    50   ~ 0
+A15
+Text Label 3600 3800 0    50   ~ 0
+PB2
+Text Label 3600 3900 0    50   ~ 0
+PB3
+Text Label 3600 4000 0    50   ~ 0
+PB4
+Text Label 3600 4100 0    50   ~ 0
+~CAS
+Text Label 3600 4200 0    50   ~ 0
+HALT
+Text Label 4800 3600 0    50   ~ 0
+PHI2
+Text Label 4800 3500 0    50   ~ 0
+~PHI2
+Text Label 4800 3700 0    50   ~ 0
+VBE
+Text Label 4800 3800 0    50   ~ 0
+FA15
+Text Label 4800 3900 0    50   ~ 0
+FA14
+Text Label 4800 4000 0    50   ~ 0
+CASMAIN
+Text Label 4800 4100 0    50   ~ 0
+CASBANK
+Text Label 3600 4400 0    50   ~ 0
+GND
+Wire Wire Line
+	5900 3500 6100 3500
+Wire Wire Line
+	5900 3600 6100 3600
+Wire Wire Line
+	5900 3700 6100 3700
+Wire Wire Line
+	5900 3900 6100 3900
+Wire Wire Line
+	5900 4000 6100 4000
+Text Label 5900 3500 0    50   ~ 0
+A14
+Text Label 5900 3600 0    50   ~ 0
+A15
+Text Label 5900 3700 0    50   ~ 0
+PB2
+Text Label 5900 3800 0    50   ~ 0
+PB3
+Text Label 5900 3900 0    50   ~ 0
+PB4
+Text Label 5900 4000 0    50   ~ 0
+~CAS
+Wire Wire Line
+	6800 3600 7000 3600
+Wire Wire Line
+	6800 3700 7000 3700
+Wire Wire Line
+	6800 3800 7000 3800
+Wire Wire Line
+	6800 3900 7000 3900
+Wire Wire Line
+	6800 4000 7000 4000
+Wire Wire Line
+	6800 4100 7000 4100
+Wire Wire Line
+	6800 4200 7000 4200
+Text Label 6800 3600 0    50   ~ 0
+PHI2
+Text Label 6800 3700 0    50   ~ 0
+VBE
+Text Label 6800 3800 0    50   ~ 0
+FA15
+Text Label 6800 3900 0    50   ~ 0
+FA14
+Text Label 6800 4000 0    50   ~ 0
+CASMAIN
+Text Label 6800 4100 0    50   ~ 0
+CASBANK
+$Comp
+L Device:C C1
+U 1 1 5EEE4218
+P 7900 3650
+F 0 "C1" H 8015 3696 50  0000 L CNN
+F 1 "100nF" H 8015 3605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7938 3500 50  0001 C CNN
+F 3 "~" H 7900 3650 50  0001 C CNN
+	1    7900 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0101
+U 1 1 5EED029D
+P 4300 3200
+F 0 "#PWR0101" H 4300 3050 50  0001 C CNN
+F 1 "+5V" H 4315 3373 50  0000 C CNN
+F 2 "" H 4300 3200 50  0001 C CNN
+F 3 "" H 4300 3200 50  0001 C CNN
+	1    4300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5EED0627
+P 7900 3400
+F 0 "#PWR0102" H 7900 3250 50  0001 C CNN
+F 1 "+5V" H 7915 3573 50  0000 C CNN
+F 2 "" H 7900 3400 50  0001 C CNN
+F 3 "" H 7900 3400 50  0001 C CNN
+	1    7900 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0103
+U 1 1 5EED1067
+P 6900 3400
+F 0 "#PWR0103" H 6900 3250 50  0001 C CNN
+F 1 "+5V" H 6915 3573 50  0000 C CNN
+F 2 "" H 6900 3400 50  0001 C CNN
+F 3 "" H 6900 3400 50  0001 C CNN
+	1    6900 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3500 6900 3500
+Wire Wire Line
+	6900 3500 6900 3400
+$Comp
+L power:GND #PWR0104
+U 1 1 5EED5291
+P 7900 3900
+F 0 "#PWR0104" H 7900 3650 50  0001 C CNN
+F 1 "GND" H 7905 3727 50  0000 C CNN
+F 2 "" H 7900 3900 50  0001 C CNN
+F 3 "" H 7900 3900 50  0001 C CNN
+	1    7900 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5EED5C8E
+P 4300 4800
+F 0 "#PWR0105" H 4300 4550 50  0001 C CNN
+F 1 "GND" H 4305 4627 50  0000 C CNN
+F 2 "" H 4300 4800 50  0001 C CNN
+F 3 "" H 4300 4800 50  0001 C CNN
+	1    4300 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4100 6100 4100
+Wire Wire Line
+	6100 4200 6000 4200
+Connection ~ 6000 4200
+Wire Wire Line
+	6000 4200 6000 4100
+Wire Wire Line
+	4300 3200 4300 3300
+Wire Wire Line
+	4300 4700 4300 4800
+Wire Wire Line
+	7900 3400 7900 3500
+Wire Wire Line
+	7900 3800 7900 3900
+Text Label 4800 4200 0    50   ~ 0
+LHALT
+Text Label 3600 4300 0    50   ~ 0
+GND
+Text Label 6800 4200 0    50   ~ 0
+HALT
+Wire Wire Line
+	6000 4250 6000 4200
+$Comp
+L power:GND #PWR0106
+U 1 1 5EED67E0
+P 6000 4250
+F 0 "#PWR0106" H 6000 4000 50  0001 C CNN
+F 1 "GND" H 6005 4077 50  0000 C CNN
+F 2 "" H 6000 4250 50  0001 C CNN
+F 3 "" H 6000 4250 50  0001 C CNN
+	1    6000 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3800 6100 3800
+$Comp
+L Connector:Conn_01x08_Male J2
+U 1 1 5EED9A52
+P 6600 3800
+F 0 "J2" H 6650 4200 50  0000 C CNN
+F 1 "Conn_01x08_Male" V 6500 3750 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6600 3800 50  0001 C CNN
+F 3 "~" H 6600 3800 50  0001 C CNN
+	1    6600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x08_Male J1
+U 1 1 5EEDB2CC
+P 6300 3800
+F 0 "J1" H 6350 4200 50  0000 R CNN
+F 1 "Conn_01x08_Male" V 6250 4100 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 6300 3800 50  0001 C CNN
+F 3 "~" H 6300 3800 50  0001 C CNN
+	1    6300 3800
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -1,0 +1,64 @@
+/*
+    C25953-20 EMMU GAL22v10 implementation that is fully functional,
+    but not 1:1 pin compatible (aditional wiring required). 
+    Copyright (C) 2020  Bartosz Mikulski
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+Name     mmu_22v10 ;
+PartNo   GAL22v10 ;
+Date     5/8/2019 ;
+Revision 02 ;
+Designer Bartosz Mikulski ;
+Company  Mikulski Lab ;
+Assembly None ;
+Location  ;
+Device   g22v10;
+
+/* *************** INPUT PINS *********************/
+PIN 1 = CLK                        ; /*                                 */ 
+PIN 3 = A14                        ; /*                                 */ 
+PIN 4 = A15                        ; /*                                 */ 
+PIN 5 = PB2_BA14                   ; /*                                 */ 
+PIN 6 = PB3_BA15                   ; /*                                 */ 
+PIN 7 = PB4_CBE                    ; /*                                 */ 
+PIN 8 = CAS                        ; /*                                 */ 
+PIN 13 = !OE                       ; /*                                 */ 
+PIN 15 = HALT	                     ; /*                                 */ 
+PIN 20 = PB5_VBE                   ; /*                                 */ 
+PIN 21 = PHI2;
+PIN 22 = VCC;
+
+/* *************** OUTPUT PINS *********************/
+PIN 14 = LHALT;
+PIN 16 = CASBANK                  ; /*                                 */ 
+PIN 17 = CASMAIN                  ; /*                                 */ 
+PIN 18 = FA14                     ; /*                                 */ 
+PIN 19 = FA15                     ; /*                                 */
+PIN 23 = O2	                    ; /*                                 */ 
+
+LHALT.D = HALT;
+LHALT.AR = 'b'0;
+LHALT.SP = 'b'0;
+
+O2 = !PHI2;
+
+$define mux_sel ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))
+
+FA14 = !((A14 & !mux_sel) # (PB3_BA15 & mux_sel));
+FA15 = !((A15 & !mux_sel) # (PB2_BA14 & mux_sel));
+
+CASBANK = !((!CAS & PHI2) & mux_sel); 
+CASMAIN = !((!CAS & PHI2) & !mux_sel);

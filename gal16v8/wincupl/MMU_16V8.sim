@@ -1,0 +1,73 @@
+%SIGNAL
+PIN   2 =  A14 
+PIN   3 =  A15 
+PIN   7 =  CAS 
+PIN  13 =  CASBANK 
+PIN  14 =  CASMAIN 
+PIN   1 =  CLK 
+PIN  15 =  FA14 
+PIN  16 =  FA15 
+PIN   8 =  HALT 
+PIN  12 =  LHALT 
+PIN  19 =  O2 
+PIN  11 = !OE 
+PIN   4 =  PB2_BA14 
+PIN   5 =  PB3_BA15 
+PIN   6 =  PB4_CBE 
+PIN  17 =  PB5_VBE 
+PIN  18 =  PHI2 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+CASBANK =>
+    A14 & !A15 & !CAS & LHALT & !PB4_CBE & PHI2
+  # A14 & !A15 & !CAS & !LHALT & !PB5_VBE & PHI2
+
+CASMAIN =>
+    !A14 & !CAS & PHI2
+  # A15 & !CAS & PHI2
+  # !CAS & LHALT & PB4_CBE & PHI2
+  # !CAS & !LHALT & PB5_VBE & PHI2
+
+FA14 =>
+    A14 & A15
+  # A14 & PB2_BA14
+  # A14 & LHALT & PB4_CBE
+  # A14 & !LHALT & PB5_VBE
+
+FA15 =>
+    A15
+  # A14 & LHALT & PB3_BA15 & !PB4_CBE
+  # A14 & !LHALT & PB3_BA15 & !PB5_VBE
+
+LHALT.d  =>
+    HALT
+
+O2 =>
+    !PHI2
+
+CASBANK.oe  =>
+    1 
+
+CASMAIN.oe  =>
+    1 
+
+FA14.oe  =>
+    1 
+
+FA15.oe  =>
+    1 
+
+O2.oe  =>
+    1 
+
+PB5_VBE.oe  =>
+    0 
+
+PHI2.oe  =>
+    0 
+
+%END

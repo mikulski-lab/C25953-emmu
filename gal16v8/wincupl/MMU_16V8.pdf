@@ -1,0 +1,190 @@
+{COMPONENT C:\USERS\BARTOSZ\DOCUMENTS\WINCUPL\ATARI_MMU\GAL16V8\WINCUPL\MMU_16V8.SYM
+
+ {ENVIRONMENT
+  {PDIFvrev 3.00}
+  {Program "CUPL(WM) Version 5.0a"}
+  {DBtype "Schematic"}
+  {DBvrev 1.01}
+  {DBtime "Sat Sep 19 12:51:01 2020 "}
+  {DBunit "MIL"}
+  {DBgrid 10}
+  {Lyrstr "WIRES" 1 "BUS" 1 "GATE" 2 "IEEE" 2 "PINFUN" 3 "PINNUM" 1 
+          "PINNAM" 6 "PINCON" 4 "REFDES" 2 "ATTR" 6 "SDOT" 1 
+          "DEVICE" 5 "OUTLIN" 5 "ATTR2" 6 "NOTES" 6 "NETNAM" 4 
+          "CMPNAM" 5 "BORDER" 5}
+ }
+
+ {USER
+  {VIEW
+   {Mode SYMB}
+   {Nlst OPEN}
+   {Vw 0 0 2}
+   {Lv 12 2 2 2 0 0 2 2 2 2 0 0 2 1 2 0 0 0 0}
+   {Gs 10 10}
+  }
+ }
+
+ {DISPLAY
+  [Ly "PINNUM"]
+  [Ls "SOLID"][Wd 0]
+  [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+ }
+
+ {SYMBOL
+  {PIN_DEF
+   [Ly "PINCON"]
+   {P OE' {Pt "INPUT"}{Lq 0}{Ploc 100 260}}
+   {P CLK {Pt "INPUT"}{Lq 0}{Ploc 100 240}}
+   {P A14 {Pt "INPUT"}{Lq 0}{Ploc 100 200}}
+   {P A15 {Pt "INPUT"}{Lq 0}{Ploc 100 180}}
+   {P PB2_BA14 {Pt "INPUT"}{Lq 0}{Ploc 100 160}}
+   {P PB3_BA15 {Pt "INPUT"}{Lq 0}{Ploc 100 140}}
+   {P PB4_CBE {Pt "INPUT"}{Lq 0}{Ploc 100 120}}
+   {P CAS {Pt "INPUT"}{Lq 0}{Ploc 100 100}}
+   {P HALT {Pt "INPUT"}{Lq 0}{Ploc 100 80}}
+   {P LHALT {Pt "INPUT"}{Lq 0}{Ploc 100 60}}
+   {P PB5_VBE {Pt "INPUT"}{Lq 0}{Ploc 100 40}}
+   {P PHI2 {Pt "INPUT"}{Lq 0}{Ploc 100 20}}
+   {P CASBANK {Pt "I/O"}{Lq 0}{Ploc 350 20}}
+   {P CASMAIN {Pt "I/O"}{Lq 0}{Ploc 350 40}}
+   {P FA14 {Pt "I/O"}{Lq 0}{Ploc 350 60}}
+   {P FA15 {Pt "I/O"}{Lq 0}{Ploc 350 80}}
+   {P O2 {Pt "I/O"}{Lq 0}{Ploc 350 100}}
+  }
+
+  {PKG
+   [Ly "REFDES"]
+   [Ts 25][Tj "CB"][Tr 0][Tm "N"]
+   {Rdl 225 290}
+
+   [Ly "PINNUM"]
+   [Ts 15][Tj "RC"]
+   {Pnl 120 270}
+   {Pnl 120 250}
+   [Ts 15][Tj "RC"]
+   {Pnl 120 210}
+   {Pnl 120 190}
+   {Pnl 120 170}
+   {Pnl 120 150}
+   {Pnl 120 130}
+   {Pnl 120 110}
+   {Pnl 120 90}
+   {Pnl 120 70}
+   {Pnl 120 50}
+   {Pnl 120 30}
+   [Ts 15][Tj "LC"]
+   {Pnl 330 30}
+   {Pnl 330 50}
+   {Pnl 330 70}
+   {Pnl 330 90}
+   {Pnl 330 110}
+
+   {Sd A 11 1 2 3 4 5 6 7 8 12 17 18 13 14 15 16 19}
+  }
+
+  {PIC
+   [Ly "GATE"]
+   [Ts 15][Tj "LC"][Tr 0][Tm "N"]
+   {R 130 280 320 0}
+   {L 120 260 100 260}
+   {C 125 260 5}
+   {L 130 240 100 240}
+   {L 130 250 140 240 130 230}
+   {L 130 200 100 200}
+   {L 130 180 100 180}
+   {L 130 160 100 160}
+   {L 130 140 100 140}
+   {L 130 120 100 120}
+   {L 130 100 100 100}
+   {L 130 80 100 80}
+   {L 130 60 100 60}
+   {L 130 40 100 40}
+   {L 130 20 100 20}
+   {L 320 20 350 20}
+   {L 320 40 350 40}
+   {L 320 60 350 60}
+   {L 320 80 350 80}
+   {L 320 100 350 100}
+   [Ly "PINNAM"]
+   [Tj "LC"]
+   {T "OE'" 140 260}
+   {T "CLK" 140 240}
+   {T "A14" 140 200}
+   {T "A15" 140 180}
+   {T "PB2_BA14" 140 160}
+   {T "PB3_BA15" 140 140}
+   {T "PB4_CBE" 140 120}
+   {T "CAS" 140 100}
+   {T "HALT" 140 80}
+   {T "LHALT" 140 60}
+   {T "PB5_VBE" 140 40}
+   {T "PHI2" 140 20}
+   [Tj "RC"]
+   {T "CASBANK" 310 20}
+   {T "CASMAIN" 310 40}
+   {T "FA14" 310 60}
+   {T "FA15" 310 80}
+   {T "O2" 310 100}
+   [Ly "DEVICE"]
+   [Tj "CT"]
+   {T "G16V8MS" 225 -10}
+  }
+
+  {ATR
+   {IN
+    {Org 100 20}
+    {Ty 255}
+   }
+   {EX
+    [Ly "ATTR2"]
+    [Ts 12][Tj "CT"][Tr 0][Tm "N"]
+    {At PLD C:\USERS\BARTOSZ\DOCUMENTS\WINCUPL\ATARI_MMU\GAL16V8\WINCUPL\MMU_16V8 225 280}
+   }
+  }
+ }
+
+ {DETAIL
+  {ANNOTATE
+  }
+
+  {NET_DEF
+   {N OE'
+   }
+   {N CLK
+   }
+   {N A14
+   }
+   {N A15
+   }
+   {N PB2_BA14
+   }
+   {N PB3_BA15
+   }
+   {N PB4_CBE
+   }
+   {N CAS
+   }
+   {N HALT
+   }
+   {N LHALT
+   }
+   {N PB5_VBE
+   }
+   {N PHI2
+   }
+   {N CASBANK
+   }
+   {N CASMAIN
+   }
+   {N FA14
+   }
+   {N FA15
+   }
+   {N O2
+   }
+  }
+
+  {SUBCOMP
+  }
+ }
+}

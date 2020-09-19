@@ -1,0 +1,86 @@
+LISTING FOR LOGIC DESCRIPTION FILE: MMU_GAL22V10.pld                 Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sat Sep 19 12:56:49 2020
+
+  1:/*
+  2:    C25953-20 EMMU GAL22v10 implementation that is fully functional,
+  3:    but not 1:1 pin compatible (aditional wiring required). 
+  4:    Copyright (C) 2020  Bartosz Mikulski
+  5:
+  6:    This program is free software: you can redistribute it and/or modify
+  7:    it under the terms of the GNU General Public License as published by
+  8:    the Free Software Foundation, either version 3 of the License, or
+  9:    any later version.
+ 10:
+ 11:    This program is distributed in the hope that it will be useful,
+ 12:    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ 13:    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ 14:    GNU General Public License for more details.
+ 15:
+ 16:    You should have received a copy of the GNU General Public License
+ 17:    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ 18:*/
+ 19:
+ 20:Name     mmu_22v10 ;
+ 21:PartNo   GAL22v10 ;
+ 22:Date     5/8/2019 ;
+ 23:Revision 02 ;
+ 24:Designer Bartosz Mikulski ;
+ 25:Company  Mikulski Lab ;
+ 26:Assembly None ;
+ 27:Location  ;
+ 28:Device   g22v10;
+ 29:
+ 30:/* *************** INPUT PINS *********************/
+ 31:PIN 1 = CLK                        ; /*                                 */ 
+ 32:PIN 3 = A14                        ; /*                                 */ 
+ 33:PIN 4 = A15                        ; /*                                 */ 
+ 34:PIN 5 = PB2_BA14                   ; /*                                 */ 
+ 35:PIN 6 = PB3_BA15                   ; /*                                 */ 
+ 36:PIN 7 = PB4_CBE                    ; /*                                 */ 
+ 37:PIN 8 = CAS                        ; /*                                 */ 
+ 38:PIN 13 = !OE                       ; /*                                 */ 
+ 39:PIN 15 = HALT                        ; /*                                 */ 
+ 40:PIN 20 = PB5_VBE                   ; /*                                 */ 
+ 41:PIN 21 = PHI2;
+ 42:PIN 22 = VCC;
+ 43:
+ 44:/* *************** OUTPUT PINS *********************/
+ 45:PIN 14 = LHALT;
+ 46:PIN 16 = CASBANK                  ; /*                                 */ 
+ 47:PIN 17 = CASMAIN                  ; /*                                 */ 
+ 48:PIN 18 = FA14                     ; /*                                 */ 
+ 49:PIN 19 = FA15                     ; /*                                 */
+ 50:PIN 23 = O2                         ; /*                                 */ 
+ 51:
+ 52:LHALT.D = HALT;
+ 53:LHALT.AR = 'b'0;
+
+LISTING FOR LOGIC DESCRIPTION FILE: MMU_GAL22V10.pld                 Page 2
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sat Sep 19 12:56:49 2020
+
+ 54:LHALT.SP = 'b'0;
+ 55:
+ 56:O2 = !PHI2;
+ 57:
+ 58:$define mux_sel ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))
+ 59:
+ 60:FA14 = !((A14 & !((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))) # (PB3_BA15 & ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))));
+ 61:FA15 = !((A15 & !((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))) # (PB2_BA14 & ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))));
+ 62:
+ 63:CASBANK = !((!CAS & PHI2) & ((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT)))); 
+ 64:CASMAIN = !((!CAS & PHI2) & !((!A15 & A14) & ((!PB4_CBE & LHALT) # (!PB5_VBE & !LHALT))));
+ 65:
+ 66:
+
+
+
+Jedec Fuse Checksum       (7358)
+Jedec Transmit Checksum   (76db)
